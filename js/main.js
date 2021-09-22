@@ -45,7 +45,13 @@ function displayMessage() {
   setTimeout(function () {
     const message =
       compliments[Math.floor(Math.random() * compliments.length)].trim();
-    alert(message);
+    $.dialog({
+      title: "💖💖💖💖💖💖",
+      content: message,
+      type: "green",
+      // This will center the alert to be in the middle of the video (camera) feed.
+      offsetBottom: $(window.top).height() - $("video").height(),
+    });
   }, 1500);
 }
 
