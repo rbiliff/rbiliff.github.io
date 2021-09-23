@@ -41,8 +41,15 @@ const compliments = (window.compliments = [
   "💖💖💖!!!!",
 ]);
 
+const noises = (window.noises = ["/noises/nemo.mp3", "/noises/brown.mp3"]);
+
 function displayMessage() {
   setTimeout(function () {
+    // Play a random noise / song...
+    const noise = noises[Math.floor(Math.random() * noises.length)];
+    new Audio(noise).play();
+
+    // Pick a compliment
     const message =
       compliments[Math.floor(Math.random() * compliments.length)].trim();
     $.dialog({
